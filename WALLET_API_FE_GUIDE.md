@@ -34,10 +34,10 @@ Dữ liệu trả về chuẩn của một đối tượng Wallet:
   "frozenBalance": 4500000,
   "walletType": "PERSONAL",
   "status": "ACTIVE",
-  "linkedBankCode": "NH",
-  "linkedBankName": "NH Bank",
+  "linkedBankCode": "KBANK",
+  "linkedBankName": "K Bank",
   "linkedBankAccount": "0901 234 567",
-  "imageUrl": "assets/images/bank/bank_nh.png",
+  "imageUrl": "assets/images/bank/k_bank.png",
   "createdAt": "2026-09-17T05:30:41.572Z",
   "updatedAt": "2026-09-18T04:19:25.000Z"
 }
@@ -58,10 +58,10 @@ Dữ liệu trả về chuẩn của một đối tượng Wallet:
 | `frozenBalance` | `number` | Số dư bị đóng băng / tạm giữ (VD: `4500000`) |
 | `walletType` | `string` | Phân loại ví (`"PERSONAL"` hoặc `"BUSINESS"`) |
 | `status` | `string` | Trạng thái ví (`"ACTIVE"`, `"LOCKED"`, `"PENDING"`) |
-| `linkedBankCode` | `string` | Mã ngân hàng liên kết (`"SH"`, `"KB"`, `"SHINHAN"`, `"HANA"`...) |
-| `linkedBankName` | `string` | Tên ngân hàng liên kết (VD: `"수협"`, `"국민은행"`, `"하나은행"`) |
+| `linkedBankCode` | `string` | Mã ngân hàng liên kết (`"KBANK"`, `"TOSS"`, `"BUSAN"`, `"SH"`...) |
+| `linkedBankName` | `string` | Tên ngân hàng liên kết (VD: `"K bank"`, `"Toss Bank"`, `"BNK Busan Bank"`) |
 | `linkedBankAccount` | `string` | Số tài khoản ngân hàng liên kết (VD: `"0901 234 567"`) |
-| `imageUrl` | `string` | Đường dẫn ảnh đại diện logo ngân hàng (`"assets/images/bank/bank_nh.png"`) |
+| `imageUrl` | `string` | Đường dẫn ảnh đại diện logo ngân hàng (`"assets/images/bank/k_bank.png"`) |
 | `createdAt` | `string` (ISO) | Thời gian tạo ví |
 | `updatedAt` | `string` (ISO) | Thời gian cập nhật ví gần nhất |
 

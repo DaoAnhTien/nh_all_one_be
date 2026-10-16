@@ -13,7 +13,7 @@ Tài liệu hướng dẫn tích hợp và sử dụng API quản lý **Danh sá
   ```
 - **Đặc điểm & Lưu ý**:
   - Quản lý độc lập thông qua bộ API `/recent-transactions`.
-  - Khi thêm tài khoản chỉ có `bankCode` (vd: `'KB'`), hệ thống tự động điền `name` (vd: `'국민은행'`) và `imageUrl` (vd: `'assets/images/bank/bank_kb.png'`) từ danh mục ngân hàng hệ thống nếu chưa có.
+  - Khi thêm tài khoản chỉ có `bankCode` (vd: `'KBANK'`), hệ thống tự động điền `name` (vd: `'K Bank'`) và `imageUrl` (vd: `'assets/images/bank/k_bank.png'`) từ danh mục ngân hàng hệ thống nếu chưa có.
   - **Không có dữ liệu mẫu (dummy data)**: Trả về mảng rỗng `[]` khi người dùng chưa có giao dịch nào và chỉ hiển thị đúng các bản ghi do người dùng/client chủ động thêm hoặc nhập.
 
 ---
@@ -26,7 +26,7 @@ Mỗi đối tượng giao dịch gần đây gồm các thuộc tính sau:
 interface RecentTransaction {
   id: string;             // ID định danh bản ghi (MongoDB ObjectId)
   bankCode?: string;      // Mã viết tắt ngân hàng (KB, SH, SHINHAN, NH, WOORI, HANA...)
-  name: string;          // Tên ngân hàng / đơn vị (국민은행, 수협, 신한은행...)
+  name: string;          // Tên ngân hàng / đơn vị (K Bank, 수협, 신한은행...)
   imageUrl: string;      // Đường dẫn ảnh / logo ngân hàng (assets/images/bank/...)
   accountNumber: string; // Số tài khoản người nhận
   accountName: string;   // Tên người nhận / chủ tài khoản (예금주명)
@@ -67,9 +67,9 @@ interface RecentTransaction {
 [
   {
     "id": "673f1a2b89c3e4567890abcd",
-    "bankCode": "KB",
-    "name": "국민은행",
-    "imageUrl": "assets/images/bank/bank_kb.png",
+    "bankCode": "KBANK",
+    "name": "K Bank",
+    "imageUrl": "assets/images/bank/k_bank.png",
     "accountNumber": "9876 543 210",
     "accountName": "자연애마트",
     "createdAt": "2026-09-24T10:00:00.000Z",
@@ -79,7 +79,7 @@ interface RecentTransaction {
     "id": "673f1a2b89c3e4567890abce",
     "bankCode": "SHINHAN",
     "name": "신한은행",
-    "imageUrl": "assets/images/bank/bank_shinhan.png",
+    "imageUrl": "assets/images/bank/bnk_busan_bank.png",
     "accountNumber": "110-234-567890",
     "accountName": "김철수",
     "createdAt": "2026-09-24T09:30:00.000Z",
@@ -96,9 +96,9 @@ interface RecentTransaction {
 - **Request Body**:
 ```json
 {
-  "bankCode": "KB",
-  "name": "국민은행",
-  "imageUrl": "assets/images/bank/bank_kb.png",
+  "bankCode": "KBANK",
+  "name": "K Bank",
+  "imageUrl": "assets/images/bank/k_bank.png",
   "accountNumber": "123-456-7890",
   "accountName": "홍길동"
 }
@@ -109,9 +109,9 @@ interface RecentTransaction {
 ```json
 {
   "id": "673f1a2b89c3e4567890abcf",
-  "bankCode": "KB",
-  "name": "국민은행",
-  "imageUrl": "assets/images/bank/bank_kb.png",
+  "bankCode": "KBANK",
+  "name": "K Bank",
+  "imageUrl": "assets/images/bank/k_bank.png",
   "accountNumber": "123-456-7890",
   "accountName": "홍길동",
   "createdAt": "2026-09-24T10:15:00.000Z",
@@ -134,16 +134,16 @@ interface RecentTransaction {
 {
   "items": [
     {
-      "bankCode": "KB",
-      "name": "국민은행",
-      "imageUrl": "assets/images/bank/bank_kb.png",
+      "bankCode": "KBANK",
+      "name": "K Bank",
+      "imageUrl": "assets/images/bank/k_bank.png",
       "accountNumber": "123-456-7890",
       "accountName": "홍길동"
     },
     {
       "bankCode": "NH",
       "name": "농협",
-      "imageUrl": "assets/images/bank/bank_nh.png",
+      "imageUrl": "assets/images/bank/toss_bank.png",
       "accountNumber": "302-0987-6543-21",
       "accountName": "이영희"
     }
@@ -154,9 +154,9 @@ interface RecentTransaction {
 ```json
 [
   {
-    "bankCode": "KB",
-    "name": "국민은행",
-    "imageUrl": "assets/images/bank/bank_kb.png",
+    "bankCode": "KBANK",
+    "name": "K Bank",
+    "imageUrl": "assets/images/bank/k_bank.png",
     "accountNumber": "123-456-7890",
     "accountName": "홍길동"
   }
@@ -174,9 +174,9 @@ interface RecentTransaction {
 ```json
 {
   "id": "673f1a2b89c3e4567890abcd",
-  "bankCode": "KB",
-  "name": "국민은행",
-  "imageUrl": "assets/images/bank/bank_kb.png",
+  "bankCode": "KBANK",
+  "name": "K Bank",
+  "imageUrl": "assets/images/bank/k_bank.png",
   "accountNumber": "9876 543 210",
   "accountName": "자연애마트",
   "createdAt": "2026-09-24T10:00:00.000Z",
@@ -240,9 +240,9 @@ curl -X POST "http://localhost:3000/recent-transactions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <TOKEN>" \
   -d '{
-    "bankCode": "KB",
-    "name": "국민은행",
-    "imageUrl": "assets/images/bank/bank_kb.png",
+    "bankCode": "KBANK",
+    "name": "K Bank",
+    "imageUrl": "assets/images/bank/k_bank.png",
     "accountNumber": "9876 543 210",
     "accountName": "자연애마트"
   }'

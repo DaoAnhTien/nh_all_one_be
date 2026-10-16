@@ -181,9 +181,9 @@ export class TransactionsService {
     });
 
     // Xác định thông tin ngân hàng nhận
-    let receiverBankName = dto.receiverBankName || '국민은행';
-    let receiverImageUrl = 'assets/images/bank/bank_kb.png';
-    let receiverBankCode = dto.receiverBankCode || 'KB';
+    let receiverBankName = dto.receiverBankName || 'K bank';
+    let receiverImageUrl = 'assets/images/bank/k_bank.png';
+    let receiverBankCode = dto.receiverBankCode || 'KBANK';
 
     if (dto.receiverBankCode) {
       try {
@@ -223,9 +223,9 @@ export class TransactionsService {
       totalWithdrawalAmount: dto.totalWithdrawalAmount ?? (dto.balanceAfter ?? newAvailableBalance),
       status: (dto.status as TransactionStatus) || TransactionStatus.SUCCESS,
       paymentBank: dto.paymentBank || {
-        bankCode: wallet.linkedBankCode || 'SH',
-        name: wallet.linkedBankName || '수협',
-        imageUrl: wallet.imageUrl || 'assets/images/bank/bank_suhyup.png',
+        bankCode: wallet.linkedBankCode || 'KBANK',
+        name: wallet.linkedBankName || 'K Bank',
+        imageUrl: wallet.imageUrl || 'assets/images/bank/k_bank.png',
         accountNumber: wallet.accountNumber,
         accountName: wallet.ownerName,
       },

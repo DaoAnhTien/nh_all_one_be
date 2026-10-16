@@ -18,12 +18,12 @@ Bảng **Bank** được thiết kế chuẩn theo mô hình **Master Data** c�
 ```json
 {
   "id": "6aab1ccfb1f2be89ec5c6c18",
-  "code": "SH",
-  "name": "수협",
-  "shortName": "수협",
-  "binCode": "007",
-  "imageUrl": "assets/images/bank/bank_suhyup.png",
-  "color": "#005596",
+  "code": "KBANK",
+  "name": "K Bank",
+  "shortName": "K bank",
+  "binCode": "089",
+  "imageUrl": "assets/images/bank/k_bank.png",
+  "color": "#00E676",
   "order": 1,
   "isActive": true,
   "createdAt": "2026-09-16T22:48:47.610Z",
@@ -40,7 +40,7 @@ Bảng **Bank** được thiết kế chuẩn theo mô hình **Master Data** c�
 | `name` | `string` | Tên đầy đủ của ngân hàng (tiếng Hàn) | `"수협"`, `"하나은행"`, `"국민은행"` |
 | `shortName` | `string` | Tên viết tắt hiển thị gọn gàng trên UI | `"수협"`, `"하나"`, `"국민"` |
 | `binCode` | `string` | Mã ngân hàng (Bank Code / BIN chuẩn Hàn Quốc) | `"007"`, `"081"`, `"004"`, `"088"` |
-| `imageUrl` | `string` | Đường dẫn asset logo ngân hàng chuẩn snake_case | `"assets/images/bank/bank_suhyup.png"` |
+| `imageUrl` | `string` | Đường dẫn asset logo ngân hàng chuẩn snake_case | `"assets/images/bank/suhyup_bank.png"` |
 | `color` | `string` | Mã màu HEX thương hiệu đặc trưng của ngân hàng | `"#005596"` (SH), `"#008485"` (Hana) |
 | `order` | `number` | Thứ tự ưu tiên sắp xếp trên màn hình (tăng dần) | `1, 2, 3...` |
 | `isActive` | `boolean` | Trạng thái ngân hàng có hoạt động hay không | `true` |
@@ -69,31 +69,31 @@ Dùng để render Bottom Sheet hoặc danh sách chọn ngân hàng (chuyển t
       "name": "수협",
       "shortName": "수협",
       "binCode": "007",
-      "imageUrl": "assets/images/bank/bank_suhyup.png",
+      "imageUrl": "assets/images/bank/suhyup_bank.png",
       "color": "#005596",
       "order": 1,
       "isActive": true
     },
     {
       "id": "6aab1ccfb1f2be89ec5c6c0b",
-      "code": "HANA",
-      "name": "하나은행",
-      "shortName": "하나",
-      "binCode": "081",
-      "imageUrl": "assets/images/bank/bank_hana.png",
-      "color": "#008485",
-      "order": 2,
+      "code": "KBANK",
+      "name": "K Bank",
+      "shortName": "K bank",
+      "binCode": "089",
+      "imageUrl": "assets/images/bank/k_bank.png",
+      "color": "#00E676",
+      "order": 1,
       "isActive": true
     },
     {
       "id": "6aab1ccfb1f2be89ec5c6c0c",
-      "code": "KB",
-      "name": "국민은행",
-      "shortName": "국민",
-      "binCode": "004",
-      "imageUrl": "assets/images/bank/bank_kb.png",
-      "color": "#FFBC00",
-      "order": 3,
+      "code": "TOSS",
+      "name": "Toss Bank",
+      "shortName": "Toss Bank",
+      "binCode": "092",
+      "imageUrl": "assets/images/bank/toss_bank.png",
+      "color": "#0064FF",
+      "order": 2,
       "isActive": true
     }
   ],

@@ -177,8 +177,8 @@ export class RecentTransactionsService {
       } catch (_) { }
     }
 
-    if (!resolvedName) resolvedName = '국민은행';
-    if (!resolvedImage) resolvedImage = 'assets/images/bank/bank_kb.png';
+    if (!resolvedName) resolvedName = 'K Bank';
+    if (!resolvedImage) resolvedImage = 'assets/images/bank/k_bank.png';
 
     return {
       bankCode: resolvedCode,

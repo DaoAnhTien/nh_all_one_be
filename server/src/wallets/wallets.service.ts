@@ -105,10 +105,10 @@ export class WalletsService {
       frozenBalance,
       walletType: dto.walletType || WalletType.PERSONAL,
       status: dto.status || WalletStatus.ACTIVE,
-      linkedBankCode: dto.linkedBankCode || 'WOORI',
-      linkedBankName: dto.linkedBankName || '우리은행',
+      linkedBankCode: dto.linkedBankCode || 'KBANK',
+      linkedBankName: dto.linkedBankName || 'K Bank',
       linkedBankAccount: dto.linkedBankAccount || '',
-      imageUrl: dto.imageUrl || 'assets/images/bank/bank_woori.png',
+      imageUrl: dto.imageUrl || 'assets/images/bank/k_bank.png',
     });
   }
 

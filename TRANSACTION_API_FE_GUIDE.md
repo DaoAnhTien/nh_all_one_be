@@ -53,14 +53,14 @@ Giao diện thực tế của một Item giao dịch trên Mobile:
   "paymentBank": {
     "bankCode": "SH",
     "name": "수협",
-    "imageUrl": "assets/images/bank/bank_suhyup.png",
+    "imageUrl": "assets/images/bank/suhyup_bank.png",
     "accountNumber": "1234 5678 9012",
     "accountName": "DAO ANH TIEN"
   },
   "beneficiaryBank": {
-    "bankCode": "KB",
-    "name": "국민은행",
-    "imageUrl": "assets/images/bank/bank_kb.png",
+    "bankCode": "TOSS",
+    "name": "Toss Bank",
+    "imageUrl": "assets/images/bank/toss_bank.png",
     "accountNumber": "128-910734-43507",
     "accountName": "자연애마트"
   },
