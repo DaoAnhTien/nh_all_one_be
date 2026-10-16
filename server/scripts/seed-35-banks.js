@@ -232,143 +232,6 @@ const ALL_35_BANKS = [
     order: 22,
     isActive: true,
   },
-  // ── Hàng 12 ─────────────────────────────────
-  {
-    code: 'NH',
-    name: 'NH Bank',
-    shortName: 'NH Bank',
-    binCode: '011',
-    color: '#00A062',
-    imageUrl: 'assets/images/bank/bank_nh.png',
-    order: 23,
-    isActive: true,
-  },
-  {
-    code: 'KB',
-    name: 'KB Kookmin Bank',
-    shortName: 'KB Bank',
-    binCode: '004',
-    color: '#FFBC00',
-    imageUrl: 'assets/images/bank/bank_kb.png',
-    order: 24,
-    isActive: true,
-  },
-  // ── Hàng 13 ─────────────────────────────────
-  {
-    code: 'SHINHAN',
-    name: 'Shinhan Bank',
-    shortName: 'Shinhan Bank',
-    binCode: '088',
-    color: '#0046FF',
-    imageUrl: 'assets/images/bank/bank_shinhan.png',
-    order: 25,
-    isActive: true,
-  },
-  {
-    code: 'WOORI',
-    name: 'Woori Bank',
-    shortName: 'Woori Bank',
-    binCode: '020',
-    color: '#0067AC',
-    imageUrl: 'assets/images/bank/bank_woori.png',
-    order: 26,
-    isActive: true,
-  },
-  // ── Hàng 14 ─────────────────────────────────
-  {
-    code: 'HANA',
-    name: 'Hana Bank',
-    shortName: 'Hana Bank',
-    binCode: '081',
-    color: '#008485',
-    imageUrl: 'assets/images/bank/bank_hana.png',
-    order: 27,
-    isActive: true,
-  },
-  {
-    code: 'IBK',
-    name: 'Industrial Bank of Korea',
-    shortName: 'IBK Bank',
-    binCode: '003',
-    color: '#1A4B9C',
-    imageUrl: 'assets/images/bank/bank_ibk.png',
-    order: 28,
-    isActive: true,
-  },
-  // ── Hàng 15 ─────────────────────────────────
-  {
-    code: 'KAKAO',
-    name: 'Kakao Bank',
-    shortName: 'Kakao Bank',
-    binCode: '090',
-    color: '#FEE500',
-    imageUrl: 'assets/images/bank/bank_kakao.png',
-    order: 29,
-    isActive: true,
-  },
-  {
-    code: 'SC',
-    name: 'Standard Chartered Bank Korea',
-    shortName: 'SC Bank',
-    binCode: '023',
-    color: '#00A3E0',
-    imageUrl: 'assets/images/bank/bank_sc.png',
-    order: 30,
-    isActive: true,
-  },
-  // ── Hàng 16 ─────────────────────────────────
-  {
-    code: 'CITI',
-    name: 'Citibank Korea',
-    shortName: 'Citi Bank',
-    binCode: '027',
-    color: '#002D72',
-    imageUrl: 'assets/images/bank/bank_citi.png',
-    order: 31,
-    isActive: true,
-  },
-  {
-    code: 'KDB',
-    name: 'Korea Development Bank',
-    shortName: 'KDB Bank',
-    binCode: '002',
-    color: '#0C4DA2',
-    imageUrl: 'assets/images/bank/bank_kdb.png',
-    order: 32,
-    isActive: true,
-  },
-  // ── Hàng 17 ─────────────────────────────────
-  {
-    code: 'NTAX',
-    name: 'National Tax',
-    shortName: 'National Tax',
-    binCode: '095',
-    color: '#1C355E',
-    imageUrl: 'assets/images/bank/bank_national_tax.png',
-    order: 33,
-    isActive: true,
-  },
-  {
-    code: 'LTAX',
-    name: 'Local Tax',
-    shortName: 'Local Tax',
-    binCode: '097',
-    color: '#2B6CB0',
-    imageUrl: 'assets/images/bank/bank_local_tax.png',
-    order: 34,
-    isActive: true,
-  },
-  // ── Hàng 18 ─────────────────────────────────
-  {
-    code: 'CUSTOMS',
-    name: 'Customs Duties',
-    shortName: 'Customs Duties',
-    binCode: '096',
-    color: '#1A365D',
-    imageUrl: 'assets/images/bank/bank_customs.png',
-    order: 35,
-    isActive: true,
-  },
 ];
 
 async function run() {
@@ -403,6 +266,11 @@ async function run() {
       { upsert: true }
     );
   }
+
+  // Xóa toàn bộ các ngân hàng ngoài 22 ngân hàng hợp lệ
+  const validCodes = ALL_35_BANKS.map((b) => b.code);
+  const deleteRes = await collection.deleteMany({ code: { $nin: validCodes } });
+  console.log(`Deleted ${deleteRes.deletedCount} excess banks from DB.`);
 
   const total = await collection.countDocuments();
   console.log(`Total banks in collection: ${total}`);

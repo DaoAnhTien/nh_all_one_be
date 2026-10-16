@@ -49,4 +49,8 @@ export class BanksRepository {
       .findByIdAndUpdate(id, updateData, { new: true })
       .exec();
   }
+
+  async deleteMany(filter: Record<string, any> = {}): Promise<any> {
+    return this.bankModel.deleteMany(filter).exec();
+  }
 }
