@@ -149,10 +149,21 @@ export class WalletsService {
   }
 
   /**
-   * Tạo ví mặc định với thông tin ngân hàng NH Bank.
+   * Tạo ví mặc định với thông tin ngân hàng mặc định.
    */
   async createDefaultWallet(userId: string, ownerName: string): Promise<WalletDocument> {
-    const bank = await this.banksService.getBankByCode('NH');
+    let bank: { code: string; name: string; imageUrl: string };
+    try {
+      bank = await this.banksService.getBankByCode('KBANK');
+    } catch (_) {
+      const allBanks = await this.banksService.getAllBanks();
+      bank = allBanks.length > 0 ? allBanks[0] : {
+        code: 'KBANK',
+        name: 'K Bank',
+        imageUrl: 'assets/images/bank/k_bank.png',
+      };
+    }
+
     const existingDefault = await this.walletsRepo.findByAccountNumber('1234 5678 9012');
     const accountNumber = existingDefault ? this.generateAccountNumber() : '1234 5678 9012';
 
