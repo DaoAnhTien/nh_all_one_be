@@ -49,16 +49,16 @@ export class Wallet {
   @Prop({ default: WalletStatus.ACTIVE, enum: WalletStatus })
   status: string;
 
-  @Prop({ default: 'KBANK', uppercase: true, trim: true })
+  @Prop({ default: 'NH', uppercase: true, trim: true })
   linkedBankCode: string;
 
-  @Prop({ default: 'K Bank' })
+  @Prop({ default: 'NH Bank' })
   linkedBankName: string;
 
   @Prop({ default: '' })
   linkedBankAccount: string;
 
-  @Prop({ default: 'assets/images/bank/k_bank.png' })
+  @Prop({ default: 'assets/images/bank/nh_bank.png' })
   imageUrl: string;
 }
 

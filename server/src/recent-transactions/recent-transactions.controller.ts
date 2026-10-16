@@ -42,9 +42,9 @@ export class RecentTransactionsController {
       example: [
         {
           id: '66f2b45a...',
-          bankCode: 'KBANK',
-          name: 'K Bank',
-          imageUrl: 'assets/images/bank/k_bank.png',
+          bankCode: 'NH',
+          name: 'NH Bank',
+          imageUrl: 'assets/images/bank/nh_bank.png',
           accountNumber: '9876 543 210',
           accountName: '자연애마트',
           createdAt: '2026-09-24T10:00:00.000Z',

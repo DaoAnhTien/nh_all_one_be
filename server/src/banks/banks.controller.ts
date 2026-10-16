@@ -9,7 +9,7 @@ import { BanksService } from './banks.service';
 @ApiTags('Banks')
 @Controller('banks')
 export class BanksController {
-  constructor(private readonly banksService: BanksService) {}
+  constructor(private readonly banksService: BanksService) { }
 
   @Get()
   @ApiOperation({ summary: 'Lấy danh sách tất cả các ngân hàng (sắp xếp theo thứ tự ưu tiên)' })

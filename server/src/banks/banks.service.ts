@@ -234,6 +234,17 @@ export const INITIAL_KOREAN_BANKS = [
     order: 22,
     isActive: true,
   },
+  // ── Hàng 12 (Ngân hàng mặc định ứng dụng) ──
+  {
+    code: 'NH',
+    name: 'NH Bank',
+    shortName: 'NH Bank',
+    binCode: '011',
+    color: '#00A062',
+    imageUrl: 'assets/images/bank/nh_bank.png',
+    order: 23,
+    isActive: true,
+  },
 ];
 
 @Injectable()

@@ -105,10 +105,10 @@ export class WalletsService {
       frozenBalance,
       walletType: dto.walletType || WalletType.PERSONAL,
       status: dto.status || WalletStatus.ACTIVE,
-      linkedBankCode: dto.linkedBankCode || 'KBANK',
-      linkedBankName: dto.linkedBankName || 'K Bank',
+      linkedBankCode: dto.linkedBankCode || 'NH',
+      linkedBankName: dto.linkedBankName || 'NH Bank',
       linkedBankAccount: dto.linkedBankAccount || '',
-      imageUrl: dto.imageUrl || 'assets/images/bank/k_bank.png',
+      imageUrl: dto.imageUrl || 'assets/images/bank/nh_bank.png',
     });
   }
 
@@ -154,13 +154,13 @@ export class WalletsService {
   async createDefaultWallet(userId: string, ownerName: string): Promise<WalletDocument> {
     let bank: { code: string; name: string; imageUrl: string };
     try {
-      bank = await this.banksService.getBankByCode('KBANK');
+      bank = await this.banksService.getBankByCode('NH');
     } catch (_) {
       const allBanks = await this.banksService.getAllBanks();
       bank = allBanks.length > 0 ? allBanks[0] : {
-        code: 'KBANK',
-        name: 'K Bank',
-        imageUrl: 'assets/images/bank/k_bank.png',
+        code: 'NH',
+        name: 'NH Bank',
+        imageUrl: 'assets/images/bank/nh_bank.png',
       };
     }
 
